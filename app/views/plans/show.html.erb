@@ -1,0 +1,208 @@
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+
+  $('#first').click(function(e){
+    e.preventDefault();
+    $('#picture').html($('#first').html());
+    $('#picture').show('slide', {
+      direction: "left"
+
+    }, 2000);
+});
+
+$('#elevation').click(function(e){
+  e.preventDefault();
+    $('#picture').html($('#elevation').html());
+    $('#picture').show('slide', {
+      direction: "left"
+
+    }, 2000);
+
+
+});
+
+$('#second').click(function(e){
+  e.preventDefault();
+    $('#picture').html($('#second').html());
+    $('#picture').show('slide', {
+      direction: "left"
+
+    }, 2000);
+
+
+});
+  });
+
+
+</script>
+
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+
+<div id="plan" class="col-md-9">
+<div id="picture">
+<center><%= image_tag(@plan.drawing_1.url(:full)) %></center>
+</div>
+<br /><br />
+<br />
+
+
+  </div>
+  
+
+<div class="well col-md-2">
+  
+    <% unless @plan.name.blank? %>
+    <p>
+      <b>Name:</b>
+      <%= @plan.name %>
+    </p>
+    <% end %>
+    <p>
+      <b>Sqfoot:</b>
+      <%= @plan.sqfoot %>
+    </p>
+    <p>
+      <b>Bedrooms:</b>
+      <%= @plan.bedrooms %>
+    </p>
+    <p>
+      <b>Bathrooms:</b>
+      <%= @plan.bathrooms %>
+    </p>
+      <% unless @plan.half_bath.blank? %>
+    <p>
+      <b>Half bath:</b>
+      <%= @plan.half_bath %>
+    </p>
+      <% end %>
+
+    <p>
+      <b>Living:</b>
+      <%= @plan.living %>
+    </p>
+    <p>
+      <b>Dining:</b>
+      <%= @plan.dining %>
+    </p>
+    <p>
+      <b>Levels:</b>
+      <%= @plan.levels %>
+    </p>
+    <% unless @plan.view.blank? %>
+    <p>
+      <b>view:</b>
+      <%= @plan.view %>
+    </p>
+    <% end %>
+    <% unless @plan.width.blank? %>
+    <p>
+      <b>Width:</b>
+      <%= @plan.width %>
+    </p>
+    <% end %>
+    <% unless @plan.depth.blank? %>
+    <p>
+      <b>Depth:</b>
+      <%= @plan.depth %>
+    </p>
+    <% end %>
+    <div id="first">
+    <p><%= image_tag @plan.drawing_1.url(:full) %></p>
+  </div>
+    <% unless @plan.drawing_2.blank? %>       
+    <p>
+      <b>Secondary View:</b>
+      <div id="second">
+      <%= image_tag(@plan.drawing_2.url(:full)) %>
+    </div>
+    </p>
+
+    <% end %>
+
+    <p>
+      <b>Elevation View:</b>
+      <div id="elevation">
+      <%= image_tag(@plan.elevation.url(:full)) %>
+      </div>
+    </p>
+
+</div>
+
+   
+  </div>
+
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  
+  $('.lightbox_trigger').click(function(e) {
+    
+    //prevent default action (hyperlink)
+    e.preventDefault();
+    
+    //Get clicked link href
+    var image_href = $(this).attr("href");
+    
+    /*  
+    If the lightbox window HTML already exists in document, 
+    change the img src to to match the href of whatever link was clicked
+    
+    If the lightbox window HTML doesn't exists, create it and insert it.
+    (This will only happen the first time around)
+    */
+  //adding if statement causes isses with link if hit a second time!! 
+  /*if ($('.lightbox').length > 0) { // #lightbox exists
+      
+      //place href as img src value
+      $('.content').html('<img src="' + image_href + '" />');
+        
+      //show lightbox window - you could use .show('fast') for a transition
+      $('.lightbox').show();
+    }
+    
+    else { //#lightbox does not exist - create and insert (runs 1st time only)
+      
+      //create HTML markup for lightbox window*/
+      var lightbox = 
+      '<div class="lightbox">' +
+        '<p>Click to close</p>' +
+        '<div class="content">' + //insert clicked link's href into img src
+          '<img src="' + image_href +'" />' +
+        '</div>' +  
+      '</div>';
+        
+      //insert lightbox HTML into page
+      $('body').append(lightbox);
+    //}
+    
+  });
+  
+  //Click anywhere on the page to get rid of lightbox window
+  $('.lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+    $('.lightbox').hide();
+  });
+
+});
+</script>
+
+
+
+<div class="buttons span12">
+  <back>
+  <p><INPUT Type="button" VALUE="Back To Search" onClick="history.go(-1);return true;"></p>
+  </back>
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> <br />
+<% end %>
+<% end %>
+
+  <br /><br /><br /><br />
+</div>
+</div>
+</div>
