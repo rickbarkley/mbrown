@@ -2,9 +2,13 @@ body {
   padding-top: 70px; 
   background-color: #fff;
 
-    background: url("bg.jpg") repeat; 
+  background: url("web-background.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #333;
-  font-family: "BebasNeueRegular", Arial, sans-serif !important;
+  font-family: "CrimsonRoman", "Times New Roman", Georgia, serif;
   font-size: 13px;
   line-height: 18px;
 
@@ -16,13 +20,13 @@ body {
 }
 
 p, ol, ul, td {
-  font-family: "BebasNeueRegular", Arial, sans-serif !important;
+  font-family: "CrimsonRoman", "Times New Roman", Georgia, serif;
   font-size: 16px;
   line-height: 20px;
 }
 
 h1 {
-    font-family: "BebasNeueRegular", Arial, sans-serif !important;
+  font-family: "CrimsonRoman", "Times New Roman", Georgia, serif;
   font-size: 36px;
   position: relative;
   font-weight: 300 !important;
