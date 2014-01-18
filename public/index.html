@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>3D Gallery with CSS3 and jQuery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="3D Gallery with CSS3 and jQuery" />
+        <meta name="keywords" content="3d, gallery, jquery, css3, auto, slideshow, navigate, mouse scroll, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+    </head>
+    <body>
+
+    	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Mike Brown Architecture</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/plans">View Plans</a></li>
+      <li><a href="/users/sign_in">Login</a></li>
+      <li><a href="/users/sign_up">Sign Up</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="http://www.mikebrownarchitect.com">Website</a></li> 
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+        <div class="container">
+			<!-- Codrops top bar -->
+<!--/ Codrops top bar -->
+			<header>
+				<h1>Mike  Brown Architecture |<span>Digital Planbook</span></h1>
+				<nav class="codrops-demos">
+					<a class="btn btn-primary" href="/plans">Search More Plans!</a>
+					<a class="btn btn-primary" href="/contact">Get a Quote</a>
+					<a class="btn btn-primary" href="/contact">Request More Info</a>
+				</nav>
+			</header>
+			<section id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<a href="#"><img src="images/slide04.jpg" alt="image01"></a>
+					<a href="#"><img src="images/thurman057.jpg" alt="image02"></a>
+					<a href="#"><img src="images/slide02.jpg" alt="image03"></a>
+					<a href="#"><img src="images/thurman038.jpg" alt="image04"></a>
+					<a href="#"><img src="images/slide03.jpg" alt="image05"></a>
+					<a href="#"><img src="images/thurman121.jpg" alt="image06"></a>
+					<a href="#"><img src="images/slide01.jpg" alt="image07"></a>
+					<a href="#"><img src="images/thurman064.jpg" alt="image08"></a>
+					<a href="#"><img src="images/slide02.jpg" alt="image09"></a>
+					<a href="#"><img src="images/Exterior.jpg" alt="image10"></a>
+					<a href="#"><img src="images/slide05.jpg" alt="image11"></a>
+					<a href="#"><img src="images/Patio.jpg" alt="image12"></a>
+				</div>
+				<nav>	
+					<span class="dg-prev">&lt;</span>
+					<span class="dg-next">&gt;</span>
+				</nav>
+			</section>
+        </div>
+
+   <footer class="footer">
+  <small>
+Created by  <a href="http://www.rickbarkleydesign.com">Rick Barkley Design</a> &copy; | Powered by <a href="http://www.nuvola-networks.com">Nuvola Networks</a>
+  </small>
+  <menu>
+    <ul>
+      <li><a href="http://www.mikebrownarchitect.com">Website</a></li> 
+      <li><a href="/contact">Contact</a></li> 
+    </ul>
+  </menu>
+        <div id="nnlogo" class="col-md-12 text-center">
+   <center>
+   <a href="#"><img src="images/archwre2.png" alt="ArchitectWare"></a>
+   </center>
+  </div>
+</footer>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.gallery.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#dg-container').gallery();
+			});
+		</script/>
+
+
+    </body>
+
+</html>

@@ -36,9 +36,9 @@ $( "#filter" ).click(function() {
 </script>
 
 <div class="searchheading">
-<h2><center>Advanced Plan Search</center></h2><br />
+<h1><center>Advanced Plan Search</center></h1><br />
 </div>
-<div class="border span11"><p></div><br /><br />
+<div class="border span11"><p></div>
 
 <!-- Start search function for DT/LT devices -->
       <div class="container">
@@ -112,6 +112,11 @@ $( "#filter" ).click(function() {
                             <%= f.submit class: "btn btn-primary" %>
 
                             <%= link_to "Start Over", plans_path, class: "btn btn-primary" %>
+                            <% if user_signed_in? %>
+                                <% if current_user.has_role? :admin %>
+                                <%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %> <br />
+                                <% end %>
+                            <% end %>
                         </p><br /><br /><br />
                     </div>
                 <% end %>
@@ -135,7 +140,7 @@ if(screen.width >= 480){
     <% @plans.each do |plan| %>
 <div id="image" class="col-md-6">   
 <center><%= link_to image_tag(plan.drawing_1.url(:full)), plan_path(plan) %></center>
-<dl class="dl-vertical">
+<dl class="dl-vertical"><center>
     <p>
       <b>Bedrooms:</b>
       <%= plan.bedrooms %> |
@@ -147,7 +152,7 @@ if(screen.width >= 480){
       <%= plan.bathrooms %>
     <% if user_signed_in? %>
     <% if current_user.has_role? :admin %>
-    <%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></center>
     <% end %>
 <% end %>
     </p>
@@ -158,13 +163,7 @@ if(screen.width >= 480){
 <%= will_paginate @plans %>
 </div>
 <br />
-<% if user_signed_in? %>
-<% if current_user.has_role? :admin %>
-<div class="col-md-4">
-<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br />
-</div>
-<% end %>
-<% end %>
+<br />
 
 </div>
 </div>
