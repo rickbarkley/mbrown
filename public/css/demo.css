@@ -42,7 +42,7 @@ section, header{
 /* General Demo Style */
 body{
   font-family: "CrimsonRoman", "Times New Roman", Georgia, serif; 
-  background: url("web-background.gif") no-repeat center center fixed; 
+  background: url(../images/web-background.gif) no-repeat center center fixed;  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
