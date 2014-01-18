@@ -59,8 +59,8 @@
 	text-indent: -9000px;
 	float: left;
 	cursor:pointer;
-	width: 36px;
-	height: 36px;
+	width: 24px;
+	height: 24px;
 	opacity: 0.8;
 	background: transparent url(../images/arrows.png) no-repeat top left;
 }
