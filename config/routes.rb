@@ -9,6 +9,10 @@ Mbrown::Application.routes.draw do
 
   resources :plans
   match '/contact', :to => 'pages#contact'
+    
+    authenticated :user do
+    root :to => 'plans#index'
+  end
 
   root :to => "public#index"
 
