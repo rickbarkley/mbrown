@@ -8,13 +8,14 @@ Mbrown::Application.routes.draw do
   get "pages/about"
 
   resources :plans
+  resources :users
   match '/contact', :to => 'pages#contact'
     
     authenticated :user do
     root :to => 'plans#index'
   end
-
-  root :to => "public#index"
+  root :to => "pages#home"
+  #root :to => "public#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

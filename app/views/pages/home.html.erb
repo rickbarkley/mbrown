@@ -1,109 +1,42 @@
-<script type="text/javascript" src="/assets/javascript/modernizr.custom.53451.js"></script>
-<script language="JavaScript1.1">
-<!--
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Design Visions | Digital Planbook</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Digital planbook architecture plans custom homes" />
+        <meta name="keywords" content="digital planbook, architeture, custom home, new home, floor plans" />
+        <meta name="author" content="Codrops" />
+		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+    </head>
+    <body id="page">
+        <ul class="cb-slideshow">
+        	<li><span>Image 06</span><div><h3></h3></div></li>
+        	<li><span>Image 04</span><div><h3></h3></div></li>
+            <li><span>Image 01</span><div><h3></h3></div></li>
+            <li><span>Image 03</span><div><h3></h3></div></li>  
+            <li><span>Image 05</span><div><h3></h3></div></li>
+            <li><span>Image 02</span><div><h3></h3></div></li>
+            
+        </ul>
+        <div class="container">
 
-/*
-JavaScript Image slideshow:
-By JavaScript Kit (www.javascriptkit.com)
-Over 200+ free JavaScript here!
-*/
+            <header>
+            	<%= image_tag("logo.png") %> 
+                <!--<h2>Digital Planbook</h2>-->
+				<p class="codrops-demos">
+					<a href="/plans">Advanced Plan Search</a>
+					<a href="/contact">Request a Quote</a>
+					<!--<a href="index4.html">Contact Us</a>-->
+				</p>
+            </header>
+        </div>
+    </body>
+</html>
 
-var slideimages=new Array()
-var slidelinks=new Array()
-function slideshowimages(){
-for (i=0;i<slideshowimages.arguments.length;i++){
-slideimages[i]=new Image()
-slideimages[i].src=slideshowimages.arguments[i]
-}
-}
-
-function slideshowlinks(){
-for (i=0;i<slideshowlinks.arguments.length;i++)
-slidelinks[i]=slideshowlinks.arguments[i]
-}
-
-function gotoshow(){
-if (!window.winslide||winslide.closed)
-winslide=window.open(slidelinks[whichlink])
-else
-winslide.location=slidelinks[whichlink]
-winslide.focus()
-}
-
-</script>
-
-
-
-<div class="row">
-	<div class="container">
-
-		<div id="home-search" class="col-md-4">
-<center><h3>Your Next Custom Home <em>Starts</em> Here</h3></center><br />
-
-<%= search_form_for @q do |f| %>
-
-
-<p>Square Footage Min: <%= f.text_field :sqfoot_gteq %></p>
-
-<p>Square Footage Max: <%= f.text_field :sqfoot_lteq %></p>
-
-
-<p>Number of Bedrooms: <%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></p>
-
-
-<p>Number of Bathrooms: <%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></p>
-
-
-<p>Number of Stories: <%= f.select :levels_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %></p>
- 
-<center><p><%= f.submit class: "btn btn-lg btn-primary" %> 
-	<%= link_to "More Options", plans_path, class: "btn btn-lg btn-primary" %>
-</p></center>
-
-
-<% end %>
-
-</div>
-<div class="col-md-8">
-<div class="popular">
-<br />
-
-
-<div class="slideshow">
-	<center>
-<a href="javascript:gotoshow()"><img src="food1.jpg" name="slide" border=0 width=640 height=360></a>
-</center>
-<script>
-<!--
-
-//configure the paths of the images, plus corresponding target links
-slideshowimages("/assets/thurman121.jpg","/assets/slide02.jpg","/assets/thurman038.jpg","/assets/slide04.jpg","/assets/thurman064.jpg","/assets/slide03.jpg")
-slideshowlinks("http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans","http://www.nuvolio.com/plans")
-
-//configure the speed of the slideshow, in miliseconds
-var slideshowspeed=3500
-
-var whichlink=0
-var whichimage=0
-function slideit(){
-if (!document.images)
-return
-document.images.slide.src=slideimages[whichimage].src
-whichlink=whichimage
-if (whichimage<slideimages.length-1)
-whichimage++
-else
-whichimage=0
-setTimeout("slideit()",slideshowspeed)
-}
-slideit()
-
-//-->
-
-</script>
-</div>
-</div>
-</div>
-</div>
-</div>
 
